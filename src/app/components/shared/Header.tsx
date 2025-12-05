@@ -1,37 +1,67 @@
+"use client"
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from './../../../assets/logo.png'
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 const Header = () => {
+    const [isOpen, setIsOpen] = useState(false)
     return (
-        <div className='max-w-[1400px] mx-auto px-5 my-10'>
-            <div className="grid grid-cols-12 px-5 items-center bg-white py-5 rounded-2xl">
-                <div className="col-span-3">
-                    <Link href={'/'}>
-                        <Image src={Logo} height={50} width={100} alt='Logo' />
-                    </Link>
+        <div className="max-w-[1440px] mx-auto px-5 my-5">
+            <nav className="bg-white rounded-2xl px-6 py-4 flex items-center justify-between shadow-sm relative z-50">
+                {/* Logo */}
+                <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 bg-[#C6EA65] relative mask-hexagon flex items-center justify-center rounded-md" style={{ clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)' }}>
+                        <div className="w-4 h-4 bg-white opacity-40 transform rotate-45"></div>
+                    </div>
+                    <span className="text-2xl font-bold text-[#1a2b3b] tracking-tight">ZapShift</span>
                 </div>
-                <div className='col-span-6'>
-                    <nav>
-                        <ul className='flex gap-3 items-center justify-center'>
-                            <li><a href="#" className='text-[#606060] hover:underline'>Services</a></li>
-                            <li><a href="#" className='text-[#606060] hover:underline'>Coverage</a></li>
-                            <li><a href="#" className='text-[#606060] hover:underline'>About Us</a></li>
-                            <li><a href="#" className='text-[#606060] hover:underline'>Pricing</a></li>
-                            <li><a href="#" className='text-[#606060] hover:underline'>Blog</a></li>
-                            <li><a href="#" className='text-[#606060] hover:underline'>Contact</a></li>
-                        </ul>
-                    </nav>
+
+                {/* Desktop Menu */}
+                <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-500">
+                    <a href="#" className="hover:text-black transition-colors">Services</a>
+                    <a href="#" className="hover:text-black transition-colors">Coverage</a>
+                    <a href="#" className="hover:text-black transition-colors">About Us</a>
+                    <a href="#" className="hover:text-black transition-colors">Pricing</a>
+                    <a href="#" className="hover:text-black transition-colors">Blog</a>
+                    <a href="#" className="hover:text-black transition-colors">Contact</a>
                 </div>
-                <div className="col-span-3">
-                    <div className="flex items-center justify-end">
-                        <button className='border border-gray-300 py-2 px-5 rounded-lg cursor-pointer'>Sign In</button>
-                        <button className='bg-[#CAEB66] cursor-pointer py-2 px-5 rounded-lg ml-3'>Sign Up</button>
-                        <button className='bg-gray-900 cursor-pointer rounded-full ml-1 text-[#CAEB66] h-10 w-10 flex items-center justify-center'><ArrowUpRight /></button>
+
+                {/* Auth Buttons */}
+                <div className="hidden lg:flex items-center gap-4">
+                    <button className="px-5 py-2.5 rounded-xl border border-gray-200 text-gray-700 font-semibold hover:border-gray-400 transition-all text-sm">
+                        Sign In
+                    </button>
+                    <div className="flex items-center gap-2">
+                        <button className="px-6 py-2.5 rounded-xl bg-[#C6EA65] text-[#1a2b3b] font-bold hover:bg-[#b5d950] transition-colors text-sm shadow-sm">
+                            Sign Up
+                        </button>
+                        <button className="w-10 h-10 rounded-full bg-[#1a1a1a] flex items-center justify-center text-white hover:bg-black transition-colors shadow-md group">
+                            <ArrowUpRight className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                        </button>
                     </div>
                 </div>
-            </div>
+
+                {/* Mobile Menu Toggle */}
+                <button
+                    className="lg:hidden p-2 text-gray-600"
+                    onClick={() => setIsOpen(!isOpen)}
+                >
+                    {isOpen ? <X /> : <Menu />}
+                </button>
+
+                {/* Mobile Menu Dropdown */}
+                {isOpen && (
+                    <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-xl p-6 flex flex-col gap-4 lg:hidden border border-gray-100">
+                        <a href="#" className="text-gray-600 font-medium">Services</a>
+                        <a href="#" className="text-gray-600 font-medium">Coverage</a>
+                        <a href="#" className="text-gray-600 font-medium">About Us</a>
+                        <div className="h-px bg-gray-100 my-2"></div>
+                        <button className="w-full py-3 rounded-xl border border-gray-200 font-semibold">Sign In</button>
+                        <button className="w-full py-3 rounded-xl bg-[#C6EA65] font-bold text-[#1a2b3b]">Sign Up</button>
+                    </div>
+                )}
+            </nav>
         </div>
     );
 };
