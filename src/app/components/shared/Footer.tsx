@@ -3,7 +3,7 @@ import { Facebook, Linkedin, Twitter, Youtube } from "lucide-react";
 export function Footer() {
     return (
         <div className="max-w-[1440px] mx-auto px-5 my-5">
-            <footer className="w-full bg-[#0b1116] rounded-2xl pt-16 pb-8 text-white text-center mt-12">
+            <footer className="w-full bg-[#0b1116] rounded-3xl pt-16 pb-8 text-white text-center mt-12">
                 {/* Logo and Tagline */}
                     <div className="flex flex-col items-center gap-4 mb-10">
                         <div className="flex items-center gap-2">
@@ -19,7 +19,7 @@ export function Footer() {
                     </div>
 
                     {/* Separator Line */}
-                    <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent mb-8"></div>
+                    <div className="w-full h-px bg-linear-to-r from-transparent via-gray-800 to-transparent mb-8"></div>
 
                     {/* Navigation Links */}
                     <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-medium text-gray-300 mb-8">
