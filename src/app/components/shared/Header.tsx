@@ -26,7 +26,7 @@ const Header = () => {
                     <Link href="/coverage" className={`hover:text-black transition-colors ${pathname == '/coverage' ? 'text-black' : ''}`}>Coverage</Link>
                     <Link href="/tracking" className={`hover:text-black transition-colorscolors ${pathname == '/coverage' ? 'text-black' : ''}`}>Track Order</Link>
                     <Link href="/about" className={`hover:text-black transition-colors ${pathname == '/coverage' ? 'text-black' : ''}`}>About Us</Link>
-                    <a href="/price-calculator" className={`hover:text-black transition-colors ${pathname == '/coverage' ? 'text-black' : ''}`}>Pricing</a>
+                    <Link href="/price-calculator" className={`hover:text-black transition-colors ${pathname == '/coverage' ? 'text-black' : ''}`}>Pricing</Link>
                     <Link href="/be-a-rider" className={`hover:text-black transition-colors ${pathname == '/coverage' ? 'text-black' : ''}`}>Be a Rider</Link>
                 </div>
 
