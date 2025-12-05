@@ -23,11 +23,11 @@ const Header = () => {
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-500">
                     <a href="#" className={`hover:text-black transition-colors`}>Services</a>
-                    <a href="#" className={`hover:text-black transition-colors`}>Coverage</a>
-                    <Link href="/tracking" className={`hover:text-black transition-colorscolors ${pathname == '/tracking' ? 'bg-gray-300 py-2 px-3 rounded-full text-black' : '' }`}>Track Order</Link>
-                    <Link href="/about" className={`hover:text-black transition-colors ${pathname == '/about' ? 'bg-gray-300 py-2 px-3 rounded-full text-black' : '' }`}>About Us</Link>
-                    <a href="/price-calculator" className={`hover:text-black transition-colors ${pathname == '/price-calculator' ? 'bg-gray-300 py-2 px-3 rounded-full text-black' : '' }`}>Pricing</a>
-                    <Link href="/be-a-rider" className={`hover:text-black transition-colors ${pathname == '/be-a-rider' ? 'bg-gray-300 py-2 px-3 rounded-full text-black' : '' }`}>Be a Rider</Link>
+                    <Link href="/coverage" className={`hover:text-black transition-colors ${pathname == '/coverage' ? 'text-black' : ''}`}>Coverage</Link>
+                    <Link href="/tracking" className={`hover:text-black transition-colorscolors ${pathname == '/coverage' ? 'text-black' : ''}`}>Track Order</Link>
+                    <Link href="/about" className={`hover:text-black transition-colors ${pathname == '/coverage' ? 'text-black' : ''}`}>About Us</Link>
+                    <a href="/price-calculator" className={`hover:text-black transition-colors ${pathname == '/coverage' ? 'text-black' : ''}`}>Pricing</a>
+                    <Link href="/be-a-rider" className={`hover:text-black transition-colors ${pathname == '/coverage' ? 'text-black' : ''}`}>Be a Rider</Link>
                 </div>
 
                 {/* Auth Buttons */}
